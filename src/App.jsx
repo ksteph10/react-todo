@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import ToDoList from './ToDoList'
 import AddTodoForm from './AddTodoForm'
 
 function App() {
   const [todoList,setTodoList] = useState([]);
+  const [newTodo, setNewTodo] = useState('');
 
   return (
     <div>
@@ -12,7 +13,8 @@ function App() {
       
       <ToDoList/>
        
-      <AddTodoForm/>
+      <AddTodoForm onAddTodo={setNewTodo} />
+      <p>New Todo: {newTodo}</p>
       <hr/>
      
 
